@@ -12,3 +12,9 @@ export const oldUserUpdate = async () => {
     console.log("err: ", err.message);
   }
 };
+
+export const oldUserUpdate2 = async () => {
+  try {
+    let resData = await models.User.find({});
+  } catch (err) {}
+};
