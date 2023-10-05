@@ -15,16 +15,6 @@ export const create = (req, res) => {
 export const place = async (req, res) => {
   const loginUser = req?.loginUser;
   try {
-    // const order = await models.Order.create(req?.body);
-    // for (const items of order.items) {
-    //   const product = await models.Product.findById(items.productId);
-    //   const newStock = product.availableStock - items.quantity;
-    //   const updatedProduct = await models.Product.findByIdAndUpdate(
-    //     items.productId,
-    //     { $set: { availableStock: newStock } },
-    //     { new: true }
-    //   );
-
     const order = await models.Order.create(req?.body);
 
     const productIds = order.items.map((item) => item.productId);

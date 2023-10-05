@@ -17,17 +17,12 @@ export const emailService = (data) => {
   });
 };
 
-// const client = require("twilio")(
-//   process.env.TWILIO_KEY,
-//   process.env.TWILIO_TOKEN
-// );
 const client = require("twilio")(
   process.env.TWILIO_KEY,
   process.env.TWILIO_TOKEN
 );
 
 export const sendOTP = (user) => {
-  // const otp = Math.floor(Math.random() * 10000);
   const otp = Math.random().toFixed(4).split(".")[1];
 
   client.messages

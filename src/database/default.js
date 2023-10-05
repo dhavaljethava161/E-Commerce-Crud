@@ -1,4 +1,3 @@
-// D:\DEVELOPMENT\node.Js\DEVELOPMENT\practice\E-commerce-crud\src\database\default.js
 import { models } from "../models";
 import productData from "../data/product.json";
 

@@ -10,43 +10,6 @@ export const create = (req, res) => {
     });
 };
 
-// export const greater = (req, res) => {
-//   const greater = req?.body?.greater;
-//   models.Product.find({
-//     price: { $gt: greater },
-//   }) /* dynamic for ==>{ price: { $gt: 1000 } }*/
-//     .then((resData) => {
-//       res.send({ status: 200, result: resData });
-//     })
-//     .catch((err) => {
-//       res.send({ status: 400, err: err.message });
-//     });
-// };
-
-// export const lesser = (req, res) => {
-//   const less = req?.body?.less;
-//   models.Product.find({ price: { $lt: less } })
-//     .then((resData) => {
-//       res.send({ status: 200, result: resData });
-//     })
-//     .catch((err) => {
-//       res.send({ status: 200, err: err.message });
-//     });
-// };
-
-// export const between = (req, res) => {
-//   const { greater, lesser } = req?.body;
-//   models.Product.find({
-//     $and: [{ price: { $gt: greater } }, { price: { $lt: lesser } }],
-//   })
-//     .then((resData) => {
-//       res.send({ status: 200, result: resData });
-//     })
-//     .catch((err) => {
-//       res.send({ status: 400, err: err.message });
-//     });
-// };
-
 export const filter = async (req, res) => {
   const { gender, gt, lt, category } = req?.body;
   const filter = {};

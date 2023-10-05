@@ -11,10 +11,6 @@ import { adminAuth, authorization } from "../authentication";
 
 const userRouter = express.Router();
 
-// function findMatchUser(filter) {
-//   return models.User.findOne(filter);
-// }
-
 userRouter.post("/create", create);
 
 userRouter.get("/signin", signin);
