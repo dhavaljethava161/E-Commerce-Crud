@@ -1,0 +1,30 @@
+import express from "express";
+import {
+  Delete,
+  create,
+  otpSend,
+  resetPassword,
+  signin,
+  update,
+} from "../controller/user";
+import { adminAuth, authorization } from "../authentication";
+
+const userRouter = express.Router();
+
+// function findMatchUser(filter) {
+//   return models.User.findOne(filter);
+// }
+
+userRouter.post("/create", create);
+
+userRouter.get("/signin", signin);
+
+userRouter.put("/update", authorization, update);
+
+userRouter.put("/sendotp", authorization, otpSend);
+
+userRouter.put("/resetpassword", authorization, resetPassword);
+
+userRouter.delete("/delete/:id", adminAuth, Delete);
+
+export default userRouter;

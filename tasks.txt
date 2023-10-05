@@ -1,0 +1,6 @@
+*************tasks********************
+1=> check more than this price____ans: db.products.find({price:{$gt:1000}}) 
+2=> checkless than this price_____ans: db.products.find({price:{$lt:30}})
+3=> check between two price _____ans: db.products.find({$and: [{price:{$gt:1000}},{price:{$lt: 1300}}]})
+4=> check for only female_______ans: db.products.find({gender:{$eq:"female"}})
+5=> check for female and kids____ans: db.products.find({gender:{$ne:"male"}})
