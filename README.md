@@ -9,7 +9,6 @@ This is a Back-end(NodeJs) E-Commerce application built using Node.js, Express a
 - [Getting Started](#getting-started)
 - [Project Structure](#project-structure)
 - [API Endpoints](#api-endpoints)
-- [Contributing](#contributing)
 
 ## Features
 
