@@ -3,6 +3,7 @@ import orderRouter from "./order";
 import productRouter from "./product";
 import userRouter from "./user";
 import wishlistRouter from "./wishlist";
+import authRouter from "./auth";
 
 export const routers = {
   cartRouter,
@@ -10,4 +11,5 @@ export const routers = {
   productRouter,
   userRouter,
   wishlistRouter,
+  authRouter,
 };

@@ -1,12 +1,13 @@
 import nodeMailer from "nodemailer";
+import { config } from "../config";
 
 export const emailService = (data) => {
   const transporter = nodeMailer.createTransport({
     host: "smtp.ethereal.email",
     port: 587,
     auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS,
+      user: config.adminCredentials.email,
+      pass: config.adminCredentials.pass,
     },
   });
   return transporter.sendMail({
@@ -17,10 +18,7 @@ export const emailService = (data) => {
   });
 };
 
-const client = require("twilio")(
-  process.env.TWILIO_KEY,
-  process.env.TWILIO_TOKEN
-);
+const client = require("twilio")(config.twilio.key, config.twilio.token);
 
 export const sendOTP = (user) => {
   const otp = Math.random().toFixed(4).split(".")[1];

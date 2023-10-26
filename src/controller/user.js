@@ -1,7 +1,7 @@
 import { models } from "../models";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
-import { emailService, sendOTP } from "../functions/sendOTP";
+import { sendOTP } from "../functions/sendOTP";
 
 export const signin = async (req, res) => {
   const { email, password } = req?.body;
@@ -16,19 +16,6 @@ export const signin = async (req, res) => {
       res.send({ status: 200, result: { matchUser, token } });
     } else res.send("User and password does'nt match");
   } else res.send("User and password does'nt match");
-};
-
-export const create = async (req, res) => {
-  try {
-    const data = await models.User.findOne({ email: req?.body?.email });
-    if (data) res.send(`user already exists with email: ${data.email}`);
-    else {
-      const resData = await models.User.create(req?.body);
-      res.send({ status: 200, result: resData });
-    }
-  } catch (err) {
-    res.send({ status: 400, err: err.message });
-  }
 };
 
 export const update = (req, res) => {

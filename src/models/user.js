@@ -21,13 +21,14 @@ const userSchema = mongoose.Schema(
     },
     age: Number,
     number: String,
-    address: {
-      add: String,
-      city: String,
-      state: String,
-      pincode: Number,
-    },
-
+    address: [
+      {
+        add: String,
+        city: String,
+        state: String,
+        pincode: Number,
+      },
+    ],
     userType: {
       type: String,
       enum: ["admin", "customer"],

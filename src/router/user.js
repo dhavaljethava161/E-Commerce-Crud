@@ -11,8 +11,6 @@ import { adminAuth, authorization } from "../authentication";
 
 const userRouter = express.Router();
 
-userRouter.post("/create", create);
-
 userRouter.get("/signin", signin);
 
 userRouter.put("/update", authorization, update);

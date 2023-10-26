@@ -1,14 +1,17 @@
 import { models } from "../models";
 import productData from "../data/product.json";
+import { config } from "../config";
 
 export async function admin() {
   try {
-    const matchUser = await models.User.findOne({ email: process.env.EMAIL });
+    const matchUser = await models.User.findOne({
+      email: config.adminCredentials.email,
+    });
     if (!matchUser) {
       models.User.create({
-        name: process.env.NAME,
-        email: process.env.EMAIL,
-        password: process.env.PASSWORD,
+        name: config.adminCredentials.name,
+        email: config.adminCredentials.email,
+        password: config.adminCredentials.pass,
         userType: "admin",
       });
     }

@@ -1,13 +1,5 @@
 import express from "express";
-import {
-  Delete,
-  cancel,
-  create,
-  get,
-  place,
-  sendOtp,
-  update,
-} from "../controller/order";
+import { Delete, cancel, create, get, place, sendOtp, update } from "../controller/order";
 import { authorization } from "../authentication";
 const orderRouter = express.Router();
 
